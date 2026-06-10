@@ -1,0 +1,28 @@
+# Note: The trigger portion (e.g., on: push: branches: [ main ]) 
+# is partially cut off at the top of the video screen but follows standard syntax.
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install Salesforce CLI
+        run: |
+          npm install sfdx-cli --global
+
+      - name: Authenticate to Salesforce
+        run: |
+          echo "${{ secrets.SFDX_AUTH_URL }}" > sf_org_login_sfdx_url
+          sf org login sfdx-url --alias DeveloperOrg --set-default-dev-hub --sfdx-url-file sf_org_login_sfdx_url
+
+      - name: Deploy to Salesforce
+        run: |
+          sf project deploy start --source-dir force-app -u DeveloperOrg --wait 10
