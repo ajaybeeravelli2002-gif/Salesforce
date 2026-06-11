@@ -11,7 +11,7 @@ const COLUMNS=[
     ];
 export default class Boards extends LightningElement {
     recordId;
-    @track sections=[];
+    @track sections = [];
     boardObjectApiName = BOARDOBJECTAPINAME;
     boardNameField = NAME_FIELD;
     boardDescriptionField = DESCRIPTION_FIELD;
@@ -25,11 +25,10 @@ export default class Boards extends LightningElement {
         this.showModalPopup = true;
     }
     handleSectionChange(event){
-        //let noOfSections=event.target.value;
-        let noOfSections = 2;
-        temp=[];
+        let noOfSections=event.target.value;
+        let temp=[];
         for(let i=0;i<noOfSections;i++){
-            temp.push({id:i,label:'Section'+(i+1)+' title'});
+            temp.push({id:i,label:`Section${i+1} Title`});
         }
         this.sections = temp;
     }

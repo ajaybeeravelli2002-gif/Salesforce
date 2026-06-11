@@ -32,11 +32,11 @@
                         <lightning-input-field field-name={boardDescriptionField}> </lightning-input-field>
                         <lightning-input-field field-name={boardNoOfSectionsField} onchange={handleSectionChange}> </lightning-input-field>
                         <template for:each={sections} for:item="section">
-                            <lightning-input-field 
+                            <lightning-input 
                                 key={section.id} 
                                 field-name={section.label}
                                 required
-                            ></lightning-input-field>
+                            ></lightning-input>
                         </template>
                         <div class="slds-var-m-top_medium">
                             <lightning-button variant="brand" type="submit" label="Save">
