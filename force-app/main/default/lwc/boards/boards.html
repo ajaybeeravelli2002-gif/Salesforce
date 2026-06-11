@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Boards">
+        <lightning-button-icon 
+            icon-name="utility:add" 
+            alternative-text="Add Board"
+            onclick={handleAddBoard}
+            slot="actions"
+        ></lightning-button-icon>
+    </lightning-card>
+    
+    <lightning-datatable
+      key-field="id"
+      data={boards}
+      columns={columns}
+    ></lightning-datatable>
+    
+</template>
