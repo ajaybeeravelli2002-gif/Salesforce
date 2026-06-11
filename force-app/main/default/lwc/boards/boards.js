@@ -1,4 +1,4 @@
-import { LightningElement } from 'lwc';
+import { LightningElement,track,wire } from 'lwc';
 import BOARDOBJECTAPINAME from '@salesforce/schema/Board__c';
 import NAME_FIELD from '@salesforce/schema/Board__c.Name';
 import DESCRIPTION_FIELD from '@salesforce/schema/Board__c.Description__c';
@@ -11,7 +11,7 @@ const COLUMNS=[
     ];
 export default class Boards extends LightningElement {
     recordId;
-    sections=[];
+    @track sections=[];
     boardObjectApiName = BOARDOBJECTAPINAME;
     boardNameField = NAME_FIELD;
     boardDescriptionField = DESCRIPTION_FIELD;
