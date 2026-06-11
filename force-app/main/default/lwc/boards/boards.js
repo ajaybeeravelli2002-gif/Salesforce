@@ -25,7 +25,8 @@ export default class Boards extends LightningElement {
         this.showModalPopup = true;
     }
     handleSectionChange(event){
-        let noOfSections=event.target.value;
+        //let noOfSections=event.target.value;
+        let noOfSections = 2;
         this.sections=[];
         for(let i=0;i<noOfSections;i++){
             this.sections.push({id:i,label:'Section'+(i+1)+' title'});
