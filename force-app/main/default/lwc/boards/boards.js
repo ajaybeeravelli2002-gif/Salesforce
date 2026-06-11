@@ -1,5 +1,5 @@
 import { LightningElement } from 'lwc';
-import BOARDOBJECTAPINAME from '@salesforce/resourceUrl/Board__c';
+import BOARDOBJECTAPINAME from '@salesforce/schema/Board__c';
 import NAME_FIELD from '@salesforce/schema/Board__c.Name';
 import DESCRIPTION_FIELD from '@salesforce/schema/Board__c.Description__c';
 import NO_OF_SECTIONS_FIELD from '@salesforce/schema/Board__c.NoOfSections__c';
