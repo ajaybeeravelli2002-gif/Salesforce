@@ -27,9 +27,10 @@ export default class Boards extends LightningElement {
     handleSectionChange(event){
         //let noOfSections=event.target.value;
         let noOfSections = 2;
-        this.sections=[];
+        temp=[];
         for(let i=0;i<noOfSections;i++){
-            this.sections.push({id:i,label:'Section'+(i+1)+' title'});
+            temp.push({id:i,label:'Section'+(i+1)+' title'});
         }
+        this.sections = temp;
     }
 }
