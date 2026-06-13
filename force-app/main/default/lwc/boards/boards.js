@@ -1,4 +1,5 @@
 import { LightningElement,track,wire } from 'lwc';
+import { createSections } from '@salesforce/apex/BoardController.createSections';   
 import BOARDOBJECTAPINAME from '@salesforce/schema/Board__c';
 import NAME_FIELD from '@salesforce/schema/Board__c.Name';
 import DESCRIPTION_FIELD from '@salesforce/schema/Board__c.Description__c';
@@ -35,4 +36,25 @@ export default class Boards extends LightningElement {
         }
         this.sections = temp;
     }
+    handleSuccessBoard(event){ 
+            const customFields= this.template.querySelectorAll('lightning-record-edit-form.lightning-input');
+            let boardNameField=this.template.querySelector('lightning-input-field[id="boardName"]');
+            customFields.forEach(field =>{
+                let newSection={
+                    Name:field.value,
+                    Board:boardNameField.value
+                }
+                this.sections.push(newSection);
+            })
+    }
+    createSectionCallout(){
+        createSections({Sections:this.sections,board__c:this.boardNameField})
+        .then((result)=>{
+            console.log('result-->',result);
+        })
+        .catch((error) =>{
+            console.error('error-->',error);
+        })
+    }
+    
 }

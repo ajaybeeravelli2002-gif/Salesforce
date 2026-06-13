@@ -27,8 +27,9 @@
                     <lightning-record-edit-form
                         object-api-name={boardObjectApiName}
                         record-id={recordId}
+                        onsuccess={handleSuccessBoard}
                     >
-                        <lightning-input-field field-name={boardNameField}> </lightning-input-field>
+                        <lightning-input-field id='boardName' field-name={boardNameField}> </lightning-input-field>
                         <lightning-input-field field-name={boardDescriptionField}> </lightning-input-field>
                         <lightning-input-field field-name={boardNoOfSectionsField} onchange={handleSectionChange}> </lightning-input-field>
                         <template for:each={sections} for:item="section">
@@ -41,7 +42,7 @@
                         <div class="slds-var-m-top_medium">
                             <lightning-button variant="brand" type="submit" label="Save">
                             </lightning-button>
-                            <lightning-button variant="brand" type="submit" label="close" onclick={closePopupHandler}>
+                            <lightning-button variant="brand" type="button" label="close" onclick={closePopupHandler}>
                             </lightning-button>
                         </div>
                     </lightning-record-edit-form>
