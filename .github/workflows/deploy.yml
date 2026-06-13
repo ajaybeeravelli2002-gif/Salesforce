@@ -4,7 +4,7 @@
 on:
   push:
     branches:
-      - branch1
+      - Branch1
 
 jobs:
   deploy:

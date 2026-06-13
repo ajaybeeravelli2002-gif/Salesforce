@@ -50,7 +50,7 @@ export default class Boards extends LightningElement {
     createSectionCallout(){
         createSections({Sections:this.sections,board__c:this.boardNameField})
         .then((result)=>{
-            console.log('result-->',result);
+            console.log('result--->',result);
         })
         .catch((error) =>{
             console.error('error-->',error);
