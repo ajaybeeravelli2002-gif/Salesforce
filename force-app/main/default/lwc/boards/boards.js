@@ -1,5 +1,5 @@
 import { LightningElement,track,wire } from 'lwc';
-import { createSections } from '@salesforce/apex/BoardController.createSections';   
+import { createSections } from '@salesforce/apex/BoardCreationHandler.createSections';   
 import BOARDOBJECTAPINAME from '@salesforce/schema/Board__c';
 import NAME_FIELD from '@salesforce/schema/Board__c.Name';
 import DESCRIPTION_FIELD from '@salesforce/schema/Board__c.Description__c';
